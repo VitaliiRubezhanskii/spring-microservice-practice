@@ -1,6 +1,7 @@
 #!/bin/sh
 
 VAULT_DEV_TOKEN=934f9eae-31ff-a8ef-e1ca-4bea9e07aa09
+CONFIG_DIR=/config
 
 vault login ${VAULT_DEV_TOKEN}
 
