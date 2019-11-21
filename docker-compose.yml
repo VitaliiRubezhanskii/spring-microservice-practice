@@ -97,7 +97,7 @@ services:
     entrypoint: /bin/sh
     command: >
       -c "
-      while ! (nc -z config-server 8888 && nc -z vault 8200); do sleep 5; echo 'Waiting for vault and config-server services to start-up...'; done;
+      while ! (curl http://config-server:8888/order-server/default && curl http://vault:8200); do sleep 5; echo 'Waiting for vault and config-server services to start-up...'; done;
       java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8787,suspend=n -jar -Dspring.profiles.active=docker /app.jar
       "
 
@@ -128,7 +128,7 @@ services:
     entrypoint: /bin/sh
     command: >
       -c "
-      while ! (nc -z config-server 8888 && nc -z vault 8200); do sleep 5; echo 'Waiting for vault and config-server services to start-up...'; done;
+      while ! (curl http://config-server:8888/order-server/default && curl http://vault:8200); do sleep 5; echo 'Waiting for vault and config-server services to start-up...'; done;
       java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8787,suspend=n -jar -Dspring.profiles.active=docker /app.jar
       "
   order-service:
@@ -142,7 +142,7 @@ services:
     entrypoint: /bin/sh
     command: >
       -c "
-      while ! (nc -z config-server 8888 && nc -z vault 8200); do sleep 5; echo 'Waiting for vault and config-server services to start-up...'; done;
+      while ! (curl http://config-server:8888/order-server/default && curl http://vault:8200); do sleep 5; echo 'Waiting for vault and config-server services to start-up...'; done;
       java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8787,suspend=n -jar -Dspring.profiles.active=docker /app.jar
       "
   shoppingcart-ui:
@@ -156,7 +156,7 @@ services:
     entrypoint: /bin/sh
     command: >
       -c "
-      while ! (nc -z config-server 8888 && nc -z vault 8200); do sleep 5; echo 'Waiting for vault and config-server services to start-up...'; done;
+      while ! (curl http://config-server:8888/order-server/default && curl http://vault:8200); do sleep 5; echo 'Waiting for vault and config-server services to start-up...'; done;
       java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8787,suspend=n -jar -Dspring.profiles.active=docker /app.jar
       "
 
