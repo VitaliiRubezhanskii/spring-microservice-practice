@@ -70,6 +70,7 @@ services:
       - "18787:8787"
     depends_on:
       - rabbitmq
+    restart: always
 
   service-registry:
     container_name: service-registry
@@ -79,6 +80,7 @@ services:
       - "28787:8787"
     depends_on:
       - config-server
+    restart: always
 
   hystrix-dashboard:
     container_name: hystrix-dashboard
@@ -145,6 +147,8 @@ services:
       while ! (curl http://config-server:8888/order-server/default && curl http://vault:8200); do sleep 5; echo 'Waiting for vault and config-server services to start-up...'; done;
       java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8787,suspend=n -jar -Dspring.profiles.active=docker /app.jar
       "
+    restart: always
+
   shoppingcart-ui:
     container_name: shoppingcart-ui
     build: ./shoppingcart-ui
