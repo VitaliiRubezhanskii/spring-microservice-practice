@@ -1,0 +1,47 @@
+#spring:
+#    application:
+#      name: configserver
+#    config:
+#      name: configserver
+#    profiles:
+#      include: native
+#
+#    cloud:
+#      config:
+#          server:
+#            native:
+#              search-locations: classpath:/config-repo
+#          discovery:
+#              service-id: configserver
+#              enabled: true
+#eureka:
+#  instance:
+#    client:
+#      service-url:
+#        defaultZone: http://localhost:8761/eureka/
+#    lease-renewal-interval-in-seconds: 10
+#
+#
+#
+#server:
+#  port: 8888
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: env
+#
+#  #spring.cloud.config.server.git.uri=https://github.com/VitaliiRubezhanskii/spring-microservice-practice
+#  #spring.cloud.config.server.git.username=vitalii.rubezhanskii@gmail.com
+#  #spring.cloud.config.server.git.password=Vitalik@1992
+#  #spring.cloud.config.server.git.clone-on-start=true
+#
+#
+#
+#
+#
+#
+#
+##eureka.client.register-with-eureka=true
+##eureka.client.fetch-registry=true
